@@ -1,26 +1,35 @@
-﻿using System.IO;
+﻿using HomeWork;
 
-string path = @"C:\Users\user\Desktop\HomeWorke\example.txt";
-string path2 = @"C:\Users\user\Desktop\HomeWorke2\example.txt";
+Console.WriteLine("Enter the car mark from this list");
+Console.WriteLine("bmw\nford\nkia\naudi\nhonda\nopel");
+string mark = Console.ReadLine();
+
+Cars bmw = new Cars();
+Cars ford = new Cars();
+Cars kia = new Cars();
+Cars audi = new Cars();
+Cars honda = new Cars();
+Cars opel = new Cars();
 
 
-string text = "Barev dzez";
-
-using (StreamWriter sw = new StreamWriter(path))
+switch (mark)
 {
-    sw.WriteLine(text);
+    case "bmw":
+        bmw.bmw();
+        break;
+    case "ford":
+        ford.ford();
+        break;
+    case "kia":
+        kia.kia();
+        break;
+    case "audi":
+        audi.audi();
+        break;
+    case "honda":
+        honda.honda();
+        break;
+    case "opel":
+        opel.opel();
+        break;
 }
-
-
-using (StreamReader sr = new StreamReader(path))
-{
-    string line;
-    using (StreamWriter sw = new StreamWriter(path2))
-    {
-        while ((line = sr.ReadLine()) != null)
-        {
-            sw.WriteLine(line);
-        }
-    }
-}
-
